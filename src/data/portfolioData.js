@@ -105,7 +105,7 @@ export const featuredProjects = [
 
         // Demo video
         videos: [
-            { src: '/projects/f1/demo.mp4', caption: 'Demo: selecting race → prediction result' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200174/demo_a3z5yx.mp4', caption: 'Demo: selecting race → prediction result' },
         ],
 
         // Key decisions & tradeoffs
@@ -187,9 +187,9 @@ export const featuredProjects = [
             { src: '/projects/detectai/image-detection.png', caption: 'Image detection result' },
         ],
 
-        // Demo video (optional)
+        // Demo video
         videos: [
-            // { src: '/projects/detectai/demo.mp4', caption: 'App demo: input → result' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200263/demo_qctole.mp4', caption: 'App demo: input → result' },
         ],
 
         // Key decisions & tradeoffs
@@ -269,7 +269,7 @@ export const featuredProjects = [
 
         // Demo video
         videos: [
-            { src: '/projects/scamshield/demo.mp4', caption: 'Demo: analyzing a suspicious message' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200326/demo_sso1we.mp4', caption: 'Demo: analyzing a suspicious message' },
         ],
 
         // Key decisions & tradeoffs
@@ -358,7 +358,7 @@ export const allProjects = [
 
         // Demo video
         videos: [
-            { src: '/projects/hls/demo.mp4', caption: 'Demo: healthy → incident → diagnosis' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200388/demo_nff6av.mp4', caption: 'Demo: healthy → incident → diagnosis' },
         ],
 
         // Key decisions & tradeoffs
@@ -441,7 +441,7 @@ export const allProjects = [
 
         // Demo video
         videos: [
-            // { src: '/projects/plantastic/demo.mp4', caption: 'Demo: browse → forum → favorite' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200997/demo_wol0l0.mp4', caption: 'Demo: browse → forum → favorite' },
         ],
 
         // Key decisions & tradeoffs
