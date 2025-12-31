@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F5F1EB;
+  color: #2C2C2C;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F1EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4CFC5;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A59E94;
+}
+
+/* Focus styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #5B4FCF;
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(91, 79, 207, 0.15);
+  color: #2C2C2C;
+}
+
+/* ============================================
+   SUBTLE BUTTON ANIMATIONS
+   Background fill effect - professional, mature
+   ============================================ */
+
+/* Fill button - background slides in from left */
+.btn-fill {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 1.5px solid #5B4FCF;
+  color: #5B4FCF;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-fill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #5B4FCF;
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-fill:hover {
+  color: #FAF8F5;
+}
+
+.btn-fill:hover::before {
+  width: 100%;
+}
+
+/* Solid button with subtle hover */
+.btn-solid {
+  background: #5B4FCF;
+  color: #FAF8F5;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-solid:hover {
+  background: #4A3FB8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(91, 79, 207, 0.25);
+}
+
+.btn-solid:active {
+  transform: translateY(0);
+}
+
+/* Card hover lift - subtle */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   PROJECT IMAGE REVEAL (conditional)
+   ============================================ */
+
+.project-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.9;
+}
+
+.project-image-container:hover .project-image {
+  transform: scale(1.02);
+  opacity: 1;
+}
+
+/* Image overlay for muted effect */
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(15, 23, 42, 0.8) 100%);
+  transition: opacity 0.3s ease;
+}
+
+.project-image-container:hover .project-image-overlay {
+  opacity: 0.7;
+}
+
+/* ============================================
+   NAV ACTIVE INDICATOR
+   ============================================ */
+
+.nav-link-active {
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 1px;
+}
