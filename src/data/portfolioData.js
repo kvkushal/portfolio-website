@@ -210,93 +210,6 @@ export const featuredProjects = [
     },
     {
         id: 3,
-        slug: 'scamshield-ai',
-        title: 'ScamShield AI',
-        shortDescription: 'Hybrid scam detection for job offer verification.',
-        thumbnail: '/thumbnails/scamshield.png',
-        techStack: ['Python', 'Langflow', 'FastAPI'],
-        githubUrl: 'https://github.com/kvkushal/scamshield',
-        liveUrl: null,
-
-        // --- DETAIL PAGE CONTENT ---
-
-        // Hero section
-        fullDescription: 'Detects job scams by analyzing messages, URLs, and recruiter behavior.',
-        quickFacts: {
-            type: 'ML-Assisted Decision System',
-        },
-
-        // Problem statement
-        problemStatement: [
-            'Job scams often look legitimate and target vulnerable job seekers.',
-            'Manual verification is slow and inconsistent.',
-            'This project aims to provide quick, explainable scam risk assessment.',
-        ],
-
-        // System overview
-        systemOverview: {
-            diagram: '/projects/scamshield/langflow-architecture.png',
-            points: [
-                'Message and URL analysis pipeline',
-                'Domain validation and heuristic checks',
-                'LLM-based reasoning for context understanding',
-                'Final risk score aggregation',
-            ],
-        },
-
-        // What I built - detailed breakdown
-        whatIBuilt: {
-            data: [
-                'Scam and legitimate job message samples',
-                'Known malicious domain patterns',
-            ],
-            models: [
-                'Rule-based heuristics',
-                'LLM-based reasoning via Langflow',
-            ],
-            pipelines: [
-                'URL and text feature extraction',
-                'Confidence scoring and normalization',
-            ],
-            apisUi: [
-                'FastAPI endpoint for analysis',
-                'JSON-based structured output',
-            ],
-        },
-
-        // Screenshots (none for this project)
-        screenshots: [],
-
-        // Demo video
-        videos: [
-            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200326/demo_sso1we.mp4', caption: 'Demo: analyzing a suspicious message' },
-        ],
-
-        // Key decisions & tradeoffs
-        keyDecisions: [
-            'Chose hybrid approach over pure ML for explainability',
-            'Avoided end-to-end deep learning to reduce false confidence',
-            'Optimized for clarity rather than accuracy alone',
-        ],
-
-        // Future improvements
-        futureImprovements: [
-            'Add feedback loop for user corrections',
-            'Expand domain reputation sources',
-            'Add browser extension',
-        ],
-
-        whyItMatters: 'Helps job seekers quickly judge suspicious offers before they lose money or personal data.',
-    },
-];
-
-// ============================================
-// ALL PROJECTS (for /projects page)
-// ============================================
-export const allProjects = [
-    ...featuredProjects,
-    {
-        id: 4,
         slug: 'hls-stream-ops',
         title: 'HLS Stream Operations',
         shortDescription: 'Real-time monitoring dashboard for HLS video streams.',
@@ -376,6 +289,93 @@ export const allProjects = [
         ],
 
         whyItMatters: 'Focuses on fast, explainable diagnosis instead of overwhelming operators with raw metrics.',
+    },
+];
+
+// ============================================
+// ALL PROJECTS (for /projects page)
+// ============================================
+export const allProjects = [
+    ...featuredProjects,
+    {
+        id: 4,
+        slug: 'scamshield-ai',
+        title: 'ScamShield AI',
+        shortDescription: 'Hybrid scam detection for job offer verification.',
+        thumbnail: '/thumbnails/scamshield.png',
+        techStack: ['Python', 'Langflow', 'FastAPI'],
+        githubUrl: 'https://github.com/kvkushal/scamshield',
+        liveUrl: null,
+
+        // --- DETAIL PAGE CONTENT ---
+
+        // Hero section
+        fullDescription: 'Detects job scams by analyzing messages, URLs, and recruiter behavior.',
+        quickFacts: {
+            type: 'ML-Assisted Decision System',
+        },
+
+        // Problem statement
+        problemStatement: [
+            'Job scams often look legitimate and target vulnerable job seekers.',
+            'Manual verification is slow and inconsistent.',
+            'This project aims to provide quick, explainable scam risk assessment.',
+        ],
+
+        // System overview
+        systemOverview: {
+            diagram: '/projects/scamshield/langflow-architecture.png',
+            points: [
+                'Message and URL analysis pipeline',
+                'Domain validation and heuristic checks',
+                'LLM-based reasoning for context understanding',
+                'Final risk score aggregation',
+            ],
+        },
+
+        // What I built - detailed breakdown
+        whatIBuilt: {
+            data: [
+                'Scam and legitimate job message samples',
+                'Known malicious domain patterns',
+            ],
+            models: [
+                'Rule-based heuristics',
+                'LLM-based reasoning via Langflow',
+            ],
+            pipelines: [
+                'URL and text feature extraction',
+                'Confidence scoring and normalization',
+            ],
+            apisUi: [
+                'FastAPI endpoint for analysis',
+                'JSON-based structured output',
+            ],
+        },
+
+        // Screenshots (none for this project)
+        screenshots: [],
+
+        // Demo video
+        videos: [
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200326/demo_sso1we.mp4', caption: 'Demo: analyzing a suspicious message' },
+        ],
+
+        // Key decisions & tradeoffs
+        keyDecisions: [
+            'Chose hybrid approach over pure ML for explainability',
+            'Avoided end-to-end deep learning to reduce false confidence',
+            'Optimized for clarity rather than accuracy alone',
+        ],
+
+        // Future improvements
+        futureImprovements: [
+            'Add feedback loop for user corrections',
+            'Expand domain reputation sources',
+            'Add browser extension',
+        ],
+
+        whyItMatters: 'Helps job seekers quickly judge suspicious offers before they lose money or personal data.',
     },
     {
         id: 5,
