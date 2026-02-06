@@ -55,6 +55,37 @@ const Hero = () => {
                     {personalInfo.tagline}
                 </motion.p>
 
+                {/* CTA Buttons */}
+                <motion.div
+                    className="flex flex-wrap items-center gap-4 mb-8"
+                    variants={fadeInUp}
+                >
+                    {/* Primary - View Projects */}
+                    <a
+                        href="#projects"
+                        className="px-5 py-2.5 text-sm font-medium btn-solid rounded-md"
+                    >
+                        View Projects
+                    </a>
+
+                    {/* Secondary - Download Resume */}
+                    <a
+                        href={personalInfo.resumeUrl}
+                        download
+                        className="px-5 py-2.5 text-sm font-medium btn-fill rounded-md"
+                    >
+                        Download Resume
+                    </a>
+
+                    {/* Tertiary - Contact Me */}
+                    <a
+                        href="#contact"
+                        className="px-5 py-2.5 text-sm font-medium text-text-light-secondary border border-dark-border rounded-md hover:text-text-light hover:border-text-light-secondary transition-colors duration-200"
+                    >
+                        Contact Me
+                    </a>
+                </motion.div>
+
                 {/* Social + Location */}
                 <motion.div
                     className="flex items-center gap-6"

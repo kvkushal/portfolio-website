@@ -1,27 +1,21 @@
-import { personalInfo, socialLinks } from '../data/portfolioData';
-import { GitHubIcon } from './SocialLinks';
+import { personalInfo } from '../data/portfolioData';
 
 /**
  * Footer Component - Dark theme
  */
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
-
     return (
         <footer className="py-8 px-6 bg-dark border-t border-dark-border">
-            <div className="max-w-6xl mx-auto flex items-center justify-between">
-                <p className="text-text-light-muted text-sm">
-                    © {currentYear} {personalInfo.name}
+            <div className="max-w-6xl mx-auto flex flex-col items-center gap-3">
+                {/* Personal tagline */}
+                <p className="text-text-light-muted text-xs">
+                    Models are easy. Reliable systems are hard.
                 </p>
-                <a
-                    href={socialLinks.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-text-light-muted hover:text-text-light transition-colors duration-200 text-sm"
-                >
-                    <GitHubIcon />
-                    <span className="hidden sm:inline">GitHub</span>
-                </a>
+
+                {/* Copyright */}
+                <p className="text-text-light-muted text-xs">
+                    © 2026 {personalInfo.name} · Bengaluru, India
+                </p>
             </div>
         </footer>
     );

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { allProjects, personalInfo } from '../data/portfolioData';
 import { fadeInUp, staggerContainer } from '../utils/animations';
+import Footer from '../components/Footer';
 
 /**
  * GitHub Icon
@@ -198,16 +199,11 @@ const ProjectsPage = () => {
                 </div>
             </main>
 
-            {/* Footer - Dark theme */}
-            <footer className="py-6 px-6 bg-dark border-t border-dark-border">
-                <div className="max-w-6xl mx-auto text-center">
-                    <p className="text-text-light-muted text-sm">
-                        © {new Date().getFullYear()} {personalInfo.name}
-                    </p>
-                </div>
-            </footer>
+            {/* Footer */}
+            <Footer />
         </div>
     );
 };
 
 export default ProjectsPage;
+

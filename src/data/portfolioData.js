@@ -15,18 +15,31 @@ export const personalInfo = {
 
     bio: `I'm a Computer Science (Data Science) undergraduate at BMS College of Engineering, graduating in 2027, with a strong interest in building machine learning systems that work reliably on real-world data.
 
-I'm most drawn to problems where models meet production constraints, situations where data is messy, signals are delayed, and systems need to handle failure gracefully. My work often sits at the intersection of applied machine learning and backend infrastructure, focusing on monitoring, prediction, and decision-making pipelines rather than isolated notebooks.
+I'm most drawn to problems where models meet production constraints, where data is messy, signals are delayed, and systems need to handle failure gracefully. My work often sits at the intersection of applied machine learning and backend infrastructure, focusing on monitoring, prediction, and decision-making pipelines rather than isolated notebooks.
 
-I enjoy working end-to-end, from feature engineering and model evaluation to serving models through APIs and designing systems that are maintainable and reproducible. I care about clarity in both code and reasoning, and I prefer practical solutions that hold up under real usage.
+I enjoy working end to end, from feature engineering and rigorous model validation to serving models through APIs and building scoring pipelines or dashboards that people can actually use. I care about clarity in both code and reasoning, and I prefer practical systems that hold up under real usage.
 
-I'm currently looking for data science and machine learning roles where I can work on meaningful problems, learn from strong engineering teams, and contribute to systems that actually ship.`,
+As President of DSync, the Data Science Club at BMSCE, I've helped build a hands-on learning culture by organizing technical workshops, mentoring peers, and encouraging experimentation beyond coursework.`,
 
     location: 'Bengaluru, India',
     institution: 'BMS College of Engineering',
     degree: 'B.E. Computer Science (Data Science)',
-    graduation: '2027',
-    resumeUrl: '/Kushal KV (Resume).pdf',
+    duration: 'October 2023 - Present',
+    cgpa: '9.27',
+    resumeUrl: '/Kushal KV.pdf',
 };
+
+// ============================================
+// EDUCATION
+// ============================================
+export const education = [
+    {
+        institution: 'BMS College of Engineering',
+        degree: 'B.E. Computer Science (Data Science)',
+        duration: 'October 2023 - Present',
+        score: 'CGPA: 9.27',
+    },
+];
 
 // ============================================
 // SOCIAL LINKS
@@ -38,91 +51,108 @@ export const socialLinks = {
 
 // ============================================
 // FEATURED PROJECTS (homepage - 3 projects)
+// Order: Aadhaar NEXUS, DetectAI, HLS
 // ============================================
 export const featuredProjects = [
     {
         id: 1,
-        slug: 'f1-race-predictor',
-        title: 'Formula 1 Race Predictor',
-        shortDescription: 'ML-powered race outcome predictions using real-time conditions.',
-        thumbnail: '/thumbnails/f1-predictor.png',
-        techStack: ['Python', 'LightGBM', 'FastAPI', 'React'],
-        githubUrl: 'https://github.com/kvkushal/F1-Race-Predictor',
-        liveUrl: 'https://f1raceprediction.netlify.app/',
+        slug: 'aadhaar-nexus',
+        title: 'Aadhaar N.E.X.U.S',
+        shortDescription: 'Governance analytics and early-warning system for UIDAI operational metadata across 36 States/UTs and 645+ districts.',
+        thumbnail: '/thumbnails/aadhaar-nexus.png',
+        techStack: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+        githubUrl: 'https://github.com/kvkushal/UIDAI-Hackathon',
+        liveUrl: 'https://aadhaar-nexus.streamlit.app/',
 
         // --- DETAIL PAGE CONTENT ---
 
         // Hero section
-        fullDescription: 'Predicts race outcomes using historical data and real-time race conditions.',
+        fullDescription: 'A governance analytics and early-warning system that transforms UIDAI operational metadata into actionable district-level service equity signals across 36 States/UTs and 645+ districts.',
         quickFacts: {
-            type: 'ML System + Web Dashboard',
-            tech: 'Python, LightGBM, FastAPI, React',
+            type: 'Governance Analytics & Policy Intelligence',
         },
 
         // Problem statement
         problemStatement: [
-            'Formula 1 race outcomes depend on many changing factors like weather, track type, and recent team performance.',
-            'Fans and analysts often rely on intuition instead of data-backed predictions.',
-            'This project explores whether structured historical data can produce reliable race predictions.',
+            'Operational stress and access barriers in Aadhaar services emerge unevenly across regions.',
+            'Raw transaction counts fail to capture quality, equity, and system strain.',
+            'No structured early-warning framework exists to prioritize intervention at district level.',
+            'Metadata only — no citizen-level data, no ground truth labels.',
         ],
 
-        // System overview with diagram
+        // System overview
         systemOverview: {
-            diagram: '/projects/f1/system-diagram.png',
+            diagram: '/projects/aadhaar-nexus/system-diagram.png',
+            description: 'Data Ingestion → Cleaning & Standardization → Aggregation → Metric Computation → Risk Classification → Dashboard',
             points: [
-                'Historical race, qualifying, and championship data ingestion',
-                'Time-aware feature engineering for drivers and constructors',
-                'ML inference exposed via FastAPI',
-                'React frontend for user interaction and predictions',
+                'UIDAI Enrollment, Demographic Updates, and Biometric Updates data ingestion',
+                'District normalization with zero-data-loss mapping',
+                'Aggregation from pincode → district → state level',
+                '4 composite governance indicators: DEI, AHS, UBS, SRS',
+                'Rule-based risk classification engine',
+                'Interactive Streamlit dashboard with Plotly visualizations',
             ],
         },
 
         // What I built - detailed breakdown
         whatIBuilt: {
             data: [
-                'Historical F1 race and qualifying datasets',
-                'Weather and track metadata',
+                'Zero-loss district normalization across 36 states',
+                'Legacy district name mapping dictionary',
+                'Time-series alignment and missing-month handling',
+                'Aggregation logic from pincode inputs to macro trends',
             ],
             models: [
-                'LightGBM for structured tabular prediction',
-                'Separate targets for qualifying position and race outcome',
+                'Digital Equity Index (DEI) — measures service fairness',
+                'Access Health Score (AHS) — measures infrastructure strain',
+                'Update Burden Score (UBS) — captures administrative overload',
+                'Stability Risk Score (SRS) — measures operational volatility',
             ],
             pipelines: [
-                'Rolling window features for recent form',
-                'Feature normalization and validation',
+                'Statistical scoring with within-state normalization',
+                'Composite index formulation',
+                'Rule-based early-warning classification',
+                'Threshold-driven district categorization',
             ],
             apisUi: [
-                'FastAPI endpoint for predictions',
-                'React UI for selecting race conditions and viewing outputs',
+                'Streamlit dashboard with interactive choropleth maps',
+                'District drill-down analysis',
+                'PDF-ready district diagnostic reports',
             ],
         },
 
         // Screenshots
         screenshots: [
-            { src: '/projects/f1/prediction-results.png', caption: 'Race prediction results' },
-            { src: '/projects/f1/race-selection.png', caption: 'Input selection form for race conditions' },
+            { src: '/projects/aadhaar-nexus/screenshot-1.png', caption: 'State-level equity overview' },
+            { src: '/projects/aadhaar-nexus/screenshot-2.png', caption: 'District risk classification' },
+            { src: '/projects/aadhaar-nexus/screenshot-3.png', caption: 'Choropleth map visualization' },
+            { src: '/projects/aadhaar-nexus/screenshot-4.png', caption: 'District diagnostic report' },
         ],
 
         // Demo video
         videos: [
-            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200174/demo_a3z5yx.mp4', caption: 'Demo: selecting race → prediction result' },
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/demo_qy1rc4.mp4', caption: 'Demo: State selection → District analysis → Risk classification' },
         ],
 
         // Key decisions & tradeoffs
         keyDecisions: [
-            'Chose LightGBM over deep learning for interpretability and faster iteration',
-            'Used rolling features to reflect real-world season dynamics',
-            'Avoided live telemetry to keep system simple and reproducible',
+            'Chose rule-driven scoring over predictive ML for explainability',
+            'Avoided black-box models to maintain policy transparency',
+            'Focused on operational metadata only to preserve privacy',
+            'Used within-state normalization to avoid unfair inter-state comparisons',
+            'Prioritized interpretability over model complexity',
         ],
 
         // Future improvements
         futureImprovements: [
-            'Add driver retirement probability modeling',
-            'Track prediction confidence over the season',
-            'Improve UI explanations for non-technical users',
+            'Add temporal drift tracking across quarters',
+            'Integrate live API ingestion if available',
+            'Add automated anomaly detection',
+            'Introduce intervention outcome tracking loop',
+            'Expand to multi-year trend analysis',
         ],
 
-        whyItMatters: 'Demonstrates how ML systems can adapt to evolving time-series data and real-world uncertainty in competitive sports analytics.',
+        whyItMatters: 'Demonstrates how structured governance metadata can be transformed into explainable, policy-ready intelligence systems without relying on black-box machine learning. It bridges the gap between raw operational data and actionable public service insights.',
     },
     {
         id: 2,
@@ -294,9 +324,13 @@ export const featuredProjects = [
 
 // ============================================
 // ALL PROJECTS (for /projects page)
+// Order: Featured first (Aadhaar NEXUS, DetectAI, HLS), then ScamShield, F1, PlantasticCare
 // ============================================
 export const allProjects = [
+    // Featured projects come first via spread
     ...featuredProjects,
+    // Then remaining projects in order: ScamShield, F1, PlantasticCare
+    // Note: We need to move F1 out of featured and add non-featured projects here
     {
         id: 4,
         slug: 'scamshield-ai',
@@ -379,6 +413,90 @@ export const allProjects = [
     },
     {
         id: 5,
+        slug: 'f1-race-predictor',
+        title: 'Formula 1 Race Predictor',
+        shortDescription: 'ML-powered race outcome predictions using real-time conditions.',
+        thumbnail: '/thumbnails/f1-predictor.png',
+        techStack: ['Python', 'LightGBM', 'FastAPI'],
+        githubUrl: 'https://github.com/kvkushal/F1-Race-Predictor',
+        liveUrl: 'https://f1raceprediction.netlify.app/',
+
+        // --- DETAIL PAGE CONTENT ---
+
+        // Hero section
+        fullDescription: 'Predicts race outcomes using historical data and real-time race conditions.',
+        quickFacts: {
+            type: 'ML System + Web Dashboard',
+            tech: 'Python, LightGBM, FastAPI, React',
+        },
+
+        // Problem statement
+        problemStatement: [
+            'Formula 1 race outcomes depend on many changing factors like weather, track type, and recent team performance.',
+            'Fans and analysts often rely on intuition instead of data-backed predictions.',
+            'This project explores whether structured historical data can produce reliable race predictions.',
+        ],
+
+        // System overview with diagram
+        systemOverview: {
+            diagram: '/projects/f1/system-diagram.png',
+            points: [
+                'Historical race, qualifying, and championship data ingestion',
+                'Time-aware feature engineering for drivers and constructors',
+                'ML inference exposed via FastAPI',
+                'React frontend for user interaction and predictions',
+            ],
+        },
+
+        // What I built - detailed breakdown
+        whatIBuilt: {
+            data: [
+                'Historical F1 race and qualifying datasets',
+                'Weather and track metadata',
+            ],
+            models: [
+                'LightGBM for structured tabular prediction',
+                'Separate targets for qualifying position and race outcome',
+            ],
+            pipelines: [
+                'Rolling window features for recent form',
+                'Feature normalization and validation',
+            ],
+            apisUi: [
+                'FastAPI endpoint for predictions',
+                'React UI for selecting race conditions and viewing outputs',
+            ],
+        },
+
+        // Screenshots
+        screenshots: [
+            { src: '/projects/f1/prediction-results.png', caption: 'Race prediction results' },
+            { src: '/projects/f1/race-selection.png', caption: 'Input selection form for race conditions' },
+        ],
+
+        // Demo video
+        videos: [
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200174/demo_a3z5yx.mp4', caption: 'Demo: selecting race → prediction result' },
+        ],
+
+        // Key decisions & tradeoffs
+        keyDecisions: [
+            'Chose LightGBM over deep learning for interpretability and faster iteration',
+            'Used rolling features to reflect real-world season dynamics',
+            'Avoided live telemetry to keep system simple and reproducible',
+        ],
+
+        // Future improvements
+        futureImprovements: [
+            'Add driver retirement probability modeling',
+            'Track prediction confidence over the season',
+            'Improve UI explanations for non-technical users',
+        ],
+
+        whyItMatters: 'Demonstrates how ML systems can adapt to evolving time-series data and real-world uncertainty in competitive sports analytics.',
+    },
+    {
+        id: 6,
         slug: 'plantasticcare',
         title: 'PlantasticCare',
         shortDescription: 'Community platform for indoor plant care guides.',
@@ -463,32 +581,52 @@ export const allProjects = [
 ];
 
 // ============================================
-// CAPABILITIES (text-based, no logos)
+// SKILLS (4-column grid)
 // ============================================
 export const capabilities = [
     {
-        name: 'Modeling & Evaluation',
-        description:
-            'Feature engineering, classical machine learning, model validation, and error analysis with an emphasis on generalization.',
-        tools: 'Pandas · NumPy · scikit-learn · LightGBM · Time Series',
+        name: 'Languages',
+        items: [
+            'Python',
+            'Java',
+            'SQL',
+            'R',
+            'HTML/CSS',
+            'Kotlin',
+        ],
     },
     {
-        name: 'Data Pipelines & Decision Logic',
-        description:
-            'Working with messy, real-world data and building time-aware pipelines and decision logic for prediction and scoring systems.',
-        tools: 'Python · SQL · Pandas',
+        name: 'Data Science & ML',
+        items: [
+            'Pandas, NumPy & scikit-learn',
+            'TensorFlow',
+            'Feature Engineering',
+            'Exploratory Data Analysis',
+            'Model Evaluation',
+            'Data Visualization',
+        ],
     },
     {
-        name: 'Applied ML & Inference Systems',
-        description:
-            'Building ML inference services and APIs, focusing on reliability, clarity, and predictable behavior.',
-        tools: 'FastAPI · Flask · Docker · REST APIs',
+        name: 'Backend & APIs',
+        items: [
+            'FastAPI',
+            'Flask',
+            'REST API Design',
+            'API Deployment & Integration',
+            'Docker',
+        ],
     },
     {
-        name: 'Experimentation & Analysis',
-        description:
-            'Iterating on models through structured experiments, exploratory analysis, and result interpretation.',
-        tools: 'Git · Jupyter · Power BI',
+        name: 'Databases & Tools',
+        items: [
+            'PostgreSQL & SQL',
+            'NoSQL (MongoDB)',
+            'Firebase',
+            'Android Studio',
+            'Power BI',
+            'Render & Vercel',
+            'Git',
+        ],
     },
 ];
 
@@ -508,6 +646,7 @@ export const contactConfig = {
 // NAVIGATION
 // ============================================
 export const navItems = [
+    { label: 'Home', href: '#hero' },
     { label: 'Projects', href: '#projects' },
     { label: 'Skills', href: '#capabilities' },
     { label: 'About', href: '#about' },

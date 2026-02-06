@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { allProjects, personalInfo } from '../data/portfolioData';
 import { fadeInUp } from '../utils/animations';
+import Footer from '../components/Footer';
 
 /**
  * Icons
@@ -85,7 +86,7 @@ const ProjectDetailPage = () => {
     const hasRichContent = project.problemStatement || project.systemOverview || project.keyDecisions;
 
     return (
-        <div className="min-h-screen bg-cream">
+        <div className="min-h-screen bg-cream flex flex-col">
             {/* Header */}
             <header className="w-full py-4 px-6 bg-dark">
                 <div className="max-w-4xl mx-auto flex items-center justify-between">
@@ -103,7 +104,7 @@ const ProjectDetailPage = () => {
             </header>
 
             {/* Main Content */}
-            <main className="py-12">
+            <main className="py-12 flex-grow">
                 <article className="max-w-4xl mx-auto px-6">
 
                     {/* ===== HERO SECTION ===== */}
@@ -383,13 +384,7 @@ const ProjectDetailPage = () => {
             </main>
 
             {/* Footer */}
-            <footer className="py-6 px-6 bg-dark border-t border-dark-border">
-                <div className="max-w-4xl mx-auto text-center">
-                    <p className="text-text-light-muted text-sm">
-                        © {new Date().getFullYear()} {personalInfo.name}
-                    </p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 };
