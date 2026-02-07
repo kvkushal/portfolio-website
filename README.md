@@ -29,22 +29,6 @@ Built to highlight engineering-focused projects and production-oriented thinking
 
 ---
 
-## Running Locally
-
-Clone the repository:
-
-git clone https://github.com/kvkushal/portfolio-website.git
-
-Install dependencies:
-
-npm install
-
-Start development server:
-
-npm run dev
-
----
-
 ## Deployment
 
 Automatically deployed via Vercel on push to main branch.
