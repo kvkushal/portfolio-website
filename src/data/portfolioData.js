@@ -51,7 +51,7 @@ export const socialLinks = {
 
 // ============================================
 // FEATURED PROJECTS (homepage - 3 projects)
-// Order: Aadhaar NEXUS, DetectAI, HLS
+// Order: Aadhaar NEXUS, DetectAI, HLS Monitoring Dashboard
 // ============================================
 export const featuredProjects = [
     {
@@ -240,91 +240,138 @@ export const featuredProjects = [
     },
     {
         id: 3,
-        slug: 'hls-stream-ops',
-        title: 'HLS Stream Operations',
-        shortDescription: 'Real-time monitoring dashboard for HLS video streams.',
-        thumbnail: '/thumbnails/hls-dashboard.png',
-        techStack: ['Python', 'FastAPI', 'React', 'TypeScript'],
-        githubUrl: 'https://github.com/kvkushal/hls-stream-ops',
-        liveUrl: 'https://hls-stream-ops.onrender.com/',
+        slug: 'hls-monitor-dashboard',
+        title: 'HLS Monitoring Dashboard',
+        shortDescription: 'A real-time HLS monitoring system built to track stream reliability, analyze media health, and surface actionable diagnostics across multiple live channels.',
+        thumbnail: '/thumbnails/hls-monitor.png',
+        techStack: ['Node.js', 'MongoDB', 'Express', 'Socket.io', 'FFmpeg', 'React', 'Tailwind'],
+        githubUrl: 'https://github.com/kvkushal/HLS-Monitoring-Dashboard',
+        liveUrl: 'https://hls-monitor.onrender.com/',
 
         // --- DETAIL PAGE CONTENT ---
 
         // Hero section
-        fullDescription: 'Real-time monitoring and diagnosis for video streaming systems.',
+        fullDescription: 'Production-Grade Real-Time Streaming Health Platform. A comprehensive HLS monitoring system designed for enterprise-scale stream reliability tracking, deep media analysis, and actionable operational diagnostics.',
         quickFacts: {
-            type: 'Monitoring Dashboard',
+            type: 'Production Streaming Infrastructure',
         },
 
         // Problem statement
         problemStatement: [
-            'Video stream failures are hard to diagnose quickly during live events.',
-            'Raw metrics overwhelm operators without explaining what went wrong.',
-            'This project focuses on fast, actionable stream diagnosis.',
+            'Large-scale streaming platforms require continuous visibility into stream health.',
+            'Basic uptime checks do not capture media-level failures such as sequence discontinuities, segment download failures, audio/video corruption, stale manifests, and latency spikes.',
+            'Operators need structured health scoring and real-time diagnostics rather than raw logs.',
         ],
 
         // System overview
         systemOverview: {
-            diagram: '/projects/hls/system-diagram.png',
+            diagram: '/projects/hls-monitor/system-diagram.png',
+            description: 'Three-layer production architecture for scalable stream monitoring:',
             points: [
-                'HLS stream ingestion',
-                'Metric extraction and rolling windows',
-                'Incident detection and root cause classification',
-                'Operator-facing dashboard',
+                'Monitoring Layer — Polls HLS manifests at fixed intervals, tracks media sequence progression, detects discontinuities and stale updates',
+                'Processing Layer — FFmpeg/FFprobe for media inspection, extracts codec, resolution, bitrate, measures audio levels, generates thumbnails',
+                'Data & Realtime Layer — MongoDB for metrics storage with TTL indexes for automatic cleanup, Socket.io for live dashboard updates',
+            ],
+        },
+
+        // Core features (custom section for this project)
+        coreFeatures: {
+            realTimeDashboard: [
+                'Live stream cards with health score',
+                'Media sequence tracking',
+                'Segment and error counters',
+                'Instant visual status indicators',
+            ],
+            healthScoring: [
+                'Sliding window evaluation',
+                'Error-weighted scoring model',
+                'Recovery decay logic',
+                'Sequence jump penalties',
+            ],
+            mediaAnalysis: [
+                'Video codec detection',
+                'Resolution and FPS extraction',
+                'Audio channel inspection',
+                'Bitrate measurement',
+                'Silence detection',
+            ],
+            diagnostics: [
+                'Downloadable daily logs',
+                'Error classification display',
+                'Timeline of recent failures',
+                'Stream-specific investigation view',
+            ],
+            security: [
+                'Rate limiting',
+                'Input validation',
+                'Helmet security headers',
+                'Safe stream deletion flow',
+                'Controlled FFmpeg concurrency',
             ],
         },
 
         // What I built - detailed breakdown
         whatIBuilt: {
             data: [
-                'Live and simulated HLS stream metrics',
+                'HLS polling engine with rolling metrics window',
+                'Media inspection pipeline using FFprobe',
+                'Health scoring algorithm',
+                'MongoDB schema with TTL indexes',
+                'Real-time event broadcasting with Socket.io',
             ],
             models: [
-                'Rule-based incident detection',
-                'Root cause classification logic',
+                'Sliding window health evaluation',
+                'Error-weighted scoring model',
+                'Recovery decay logic',
             ],
             pipelines: [
-                'Rolling window health evaluation',
-                'Incident state transitions',
+                'HLS manifest polling at 7-second intervals',
+                'Media sequence progression tracking',
+                'FFmpeg concurrency control',
             ],
             apisUi: [
-                'FastAPI backend for stream health',
-                'React dashboard with timelines and alerts',
+                'Multi-stream monitoring dashboard',
+                'Stream-level analytics view',
+                'Live signal strength visualization',
+                'Error history and metrics charts',
             ],
         },
 
         // Screenshots
         screenshots: [
-            { src: '/projects/hls/dashboard-overview.png', caption: 'Stream health dashboard' },
-            { src: '/projects/hls/incident-timeline.png', caption: 'Incident timeline view' },
+            { src: '/projects/hls-monitor/stream-analysis-1.png', caption: 'Stream analysis with live signal strength' },
+            { src: '/projects/hls-monitor/stream-analysis-2.png', caption: 'Signal history and media diagnostics' },
         ],
 
-        // Demo video
         videos: [
-            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200388/demo_nff6av.mp4', caption: 'Demo: healthy → incident → diagnosis' },
+            { src: 'https://player.cloudinary.com/embed/?cloud_name=dywnxdmgf&public_id=demo_k96uee', caption: 'Demo: Real-time stream monitoring and analysis' },
         ],
 
         // Key decisions & tradeoffs
         keyDecisions: [
-            'Hid charts by default to reduce cognitive load',
-            'Used rules instead of ML for predictable behavior',
-            'Optimized for operator speed, not analytics depth',
+            '7-second polling interval to balance load and detection speed',
+            'Sliding window metrics instead of cumulative counters',
+            'TTL-based cleanup to prevent database growth',
+            'Concurrency control for FFmpeg execution',
+            'Real-time push updates instead of client polling',
         ],
 
         // Future improvements
         futureImprovements: [
-            'Add historical trend analysis',
-            'Integrate alerting systems',
-            'Support multi-CDN comparison',
+            'Alert integrations (Slack, PagerDuty)',
+            'Multi-tenant authentication',
+            'Multi-CDN comparison view',
+            'Horizontal scaling with Redis',
+            'Kubernetes deployment setup',
         ],
 
-        whyItMatters: 'Focuses on fast, explainable diagnosis instead of overwhelming operators with raw metrics.',
+        whyItMatters: 'Transforms raw streaming metrics into structured operational intelligence that operators can act on in real time.',
     },
 ];
 
 // ============================================
 // ALL PROJECTS (for /projects page)
-// Order: Featured first (Aadhaar NEXUS, DetectAI, HLS), then ScamShield, F1, PlantasticCare
+// Order: Aadhaar NEXUS, DetectAI, HLS Monitoring Dashboard, ScamShield, StreamProbeX, F1, PlantasticCare
 // ============================================
 export const allProjects = [
     // Featured projects come first via spread
@@ -413,6 +460,102 @@ export const allProjects = [
     },
     {
         id: 5,
+        slug: 'hls-stream-ops',
+        title: 'StreamProbeX',
+        shortDescription: 'Real-time HLS reliability intelligence for fast incident diagnosis and operator clarity.',
+        thumbnail: '/thumbnails/streamprobex.png',
+        techStack: ['Video Streaming', 'System Reliability', 'FastAPI', 'React', 'Observability'],
+        githubUrl: 'https://github.com/kvkushal/hls-stream-ops',
+        liveUrl: 'https://hls-stream-ops.onrender.com/',
+
+        // --- DETAIL PAGE CONTENT ---
+
+        // Hero section
+        fullDescription: 'StreamProbeX is an operator-focused reliability platform for HLS video streams. It transforms low-level streaming metrics into actionable health signals, structured incidents, and explainable root cause classification. This project focuses on practical stream reliability engineering, not raw analytics dashboards.',
+        quickFacts: {
+            type: 'Stream Reliability Platform',
+        },
+
+        // Problem statement
+        problemStatement: [
+            'Live video failures are difficult to diagnose during ongoing broadcasts.',
+            'Raw metrics overwhelm engineers without clearly explaining what failed.',
+            'Operators need fast, structured answers instead of scattered telemetry.',
+            'StreamProbeX solves this by turning stream behavior into health states, incidents, and explainable diagnostics.',
+        ],
+
+        // System overview
+        systemOverview: {
+            diagram: '/projects/streamprobex/system-diagram.png',
+            description: 'StreamProbeX follows a three-layer reliability architecture:',
+            points: [
+                'Monitoring Layer — Continuous HLS ingestion and metric extraction',
+                'Investigation Layer — Health evaluation, incident lifecycle management, and rule-based root cause classification',
+                'Analysis Layer — Historical trend inspection using rolling in-memory windows',
+            ],
+            coreCapabilities: [
+                'HLS manifest and segment monitoring',
+                'Rolling window health evaluation',
+                'Incident state transitions (Open → Acknowledged → Resolved)',
+                'Root cause classification with evidence',
+                'Operator-first dashboard design',
+            ],
+        },
+
+        // What I built - detailed breakdown
+        whatIBuilt: {
+            data: [
+                'Live and simulated HLS stream inputs',
+                'Segment-level latency, error rate, and availability metrics',
+            ],
+            models: [
+                'Deterministic rule-based incident detection',
+                'Health state evaluation engine',
+                'Root cause classification with confidence scoring',
+            ],
+            pipelines: [
+                'Rolling 2-minute health windows',
+                'Short-term historical buffers for trend inspection',
+                'State-driven incident lifecycle management',
+            ],
+            apisUi: [
+                'FastAPI backend for stream monitoring and incident control',
+                'REST endpoints for metrics, health, and incident management',
+                'React + TypeScript dashboard optimized for clarity and speed',
+            ],
+        },
+
+        // Screenshots
+        screenshots: [
+            { src: '/projects/streamprobex/dashboard-overview.png', caption: 'Stream health dashboard' },
+            { src: '/projects/streamprobex/incident-timeline.png', caption: 'Incident timeline view' },
+        ],
+
+        // Demo video
+        videos: [
+            { src: 'https://res.cloudinary.com/dywnxdmgf/video/upload/v1767200388/demo_nff6av.mp4', caption: 'Demo: healthy → incident → diagnosis' },
+        ],
+
+        // Key decisions & tradeoffs
+        keyDecisions: [
+            'Chose rule-based logic over ML for transparency and operator trust',
+            'Prioritized speed and clarity over deep statistical analytics',
+            'Used in-memory storage to simplify operational workflow',
+            'Structured the UI into Monitoring → Investigation → Analysis modes',
+        ],
+
+        // Future improvements
+        futureImprovements: [
+            'Persistent storage for long-term trend analysis',
+            'Multi-CDN comparison support',
+            'Alert integrations (Slack / Webhooks)',
+            'Adaptive thresholds instead of fixed rules',
+        ],
+
+        whyItMatters: 'Stream reliability is a systems engineering problem, not just a monitoring problem. StreamProbeX demonstrates how to design explainable, production-oriented diagnostics instead of building dashboards filled with raw telemetry. It reflects real-world thinking about reliability, incident response, and operator usability.',
+    },
+    {
+        id: 6,
         slug: 'f1-race-predictor',
         title: 'Formula 1 Race Predictor',
         shortDescription: 'ML-powered race outcome predictions using real-time conditions.',
@@ -496,7 +639,7 @@ export const allProjects = [
         whyItMatters: 'Demonstrates how ML systems can adapt to evolving time-series data and real-world uncertainty in competitive sports analytics.',
     },
     {
-        id: 6,
+        id: 7,
         slug: 'plantasticcare',
         title: 'PlantasticCare',
         shortDescription: 'Community platform for indoor plant care guides.',
